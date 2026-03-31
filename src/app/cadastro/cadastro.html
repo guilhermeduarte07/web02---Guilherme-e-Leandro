@@ -1,0 +1,25 @@
+<h2 class="text-center mt-3">Cadastro</h2>
+
+<div class="container d-flex justify-content-center">
+  <div class="card p-4 cadastro-card">
+
+    <h5 class="text-success text-center">{{mensagem}}</h5>
+
+    <input type="number" class="form-control mb-2" placeholder="Código" [(ngModel)]="obj.codigo">
+
+    <input type="text" class="form-control mb-2" placeholder="Nome" [(ngModel)]="obj.nome">
+
+    <input type="email" class="form-control mb-2" placeholder="Email" [(ngModel)]="obj.email">
+
+    <input type="password" class="form-control mb-2" placeholder="Senha" [(ngModel)]="obj.senha">
+
+    <input type="text" class="form-control mb-2" placeholder="Telefone" [(ngModel)]="obj.telefone">
+
+    <textarea class="form-control mb-3" placeholder="Endereço" [(ngModel)]="obj.logradouro" rows="3"></textarea>
+
+    <button (click)="gravar()" class="btn btn-primary w-100">
+      Gravar
+    </button>
+
+  </div>
+</div>

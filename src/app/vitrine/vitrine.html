@@ -1,0 +1,43 @@
+<h2 class="text-center mt-3">Vitrine</h2>
+
+<div class="container">
+  <div class="row g-3">
+
+    <div *ngFor="let obj of lista" class="col-sm-12 col-md-6 col-lg-4 col-xxl-2">
+      
+      <div class="card p-2 text-center vitrine-card">
+
+        <h5>{{obj.nome}}</h5>
+
+        <img src="img{{obj.codigo}}.jpg" class="img-fluid mb-2">
+
+        <div *ngIf="obj.promo>=obj.valor" class="preco">
+          R$ {{obj.valor}}
+        </div>
+
+        <div *ngIf="obj.promo<obj.valor">
+          <span class="text-danger text-decoration-line-through">
+            R$ {{obj.valor}}
+          </span><br>
+          <span class="preco">
+            R$ {{obj.promo}}
+          </span>
+        </div>
+
+        <button 
+          *ngIf="obj.quantidade > 0"
+          class="btn btn-primary"
+          [routerLink]="['/detalhe-produto', obj.codigo]">
+          Comprar
+        </button>
+
+        <h6 *ngIf="obj.quantidade<=0" class="text-danger mt-2">
+          Sem Estoque
+        </h6>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

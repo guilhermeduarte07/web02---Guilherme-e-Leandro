@@ -1,0 +1,36 @@
+<div class="container mt-5" *ngIf="produto">
+
+  <div class="card p-4">
+
+    <h2>{{ produto.nome }}</h2>
+
+    <img 
+      src="img{{produto.codigo}}.jpg" 
+      class="img-fluid mb-3"
+      style="max-width: 300px;"
+    >
+
+    <p>{{ produto.descritivo }}</p>
+
+    <div *ngIf="produto.promo < produto.valor">
+      <span class="text-danger text-decoration-line-through">
+        R$ {{ produto.valor }}
+      </span><br>
+      <span class="text-success fs-4">
+        R$ {{ produto.promo }}
+      </span>
+    </div>
+
+    <div *ngIf="produto.promo >= produto.valor">
+      <span class="text-success fs-4">
+        R$ {{ produto.valor }}
+      </span>
+    </div>
+
+    <h6 *ngIf="produto.quantidade <= 0" class="text-danger mt-2">
+      Sem Estoque
+    </h6>
+
+  </div>
+
+</div>
